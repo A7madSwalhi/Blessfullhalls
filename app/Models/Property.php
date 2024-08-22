@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class property extends Model
+class Property extends Model
 {
     use HasFactory;
 
@@ -23,22 +23,23 @@ class property extends Model
 
     protected $table = 'properties';
 
-    public function bookings(){
-        return $this->hasMany(Booking::class,'property_id');
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class, 'property_id');
     }
 
-    public function lessor(){
-        return $this->belongsTo(Lessor::class,'lessor_id');
+    public function lessor()
+    {
+        return $this->belongsTo(Lessor::class, 'lessor_id');
     }
 
-    public function category(){
-        return $this->belongsTo(Category::class,'category_id');
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
-    public function property_images(){
-        return $this->hasMany(Property_image::class,'property_id');
+    public function property_images()
+    {
+        return $this->hasMany(Property_image::class, 'property_id');
     }
-
-
-
 }
